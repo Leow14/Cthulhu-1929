@@ -21,14 +21,25 @@ body {
 
 .bars {
     width: 80vw;
-    display: flex
+    display: flex;
+    align-items: center;
 }
 
-.health_bar, .sanity_bar {
+.health_bar{
     width: 40vw;
     display: flex;
-    gap: 10px;
+    
     align-items: center;
+    margin-right: 30px;
+}
+
+.sanity_bar {
+    width: 40vw;
+    display: flex;
+   
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 60px;
 }
 
 .heart, .brain {
@@ -43,9 +54,26 @@ body {
   border-top: 2px solid #2d2b39;
 }
 
-.photo {
+.profile {
     width: 20vw;
     background-color: chartreuse;
+    display: flex;
+    flex-direction: flex;
+}
+
+.photo {
+  margin-top: 1vh;
+  margin-left: 1vh;
+width: 120px;
+height: 20vh;
+}
+
+.view_button {
+  margin-top: 10vh;
+  margin-left: 5vw;
+  width: 2vw;
+  height: 5vh;
+
 }
 
 .text_history {
@@ -81,17 +109,17 @@ body {
 }
 
 .inventory {
-    background-image: url("../../Imagens/Texturas/backpack_texture.jpg");
-    height: 20vh;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 12px;
-    box-sizing: border-box;
-    border: 1px solid #090336;
+  background-image: url("../../Imagens/Texturas/backpack_texture.jpg");
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border: 1px solid #090336;
     
     
-    border-bottom: 2px solid #2d2b39;
+  border-bottom: 2px solid #2d2b39;
 }
 
 .inv-nav {
@@ -129,9 +157,9 @@ body {
 .inv-item {  
   flex: 0 0 calc((100% - 24px) / 3);
   /* Explicação: 3 itens por linha e gap total = 2 * 12px = 24px */  
-  height: 150px;
-  background: #a1e41d;
-  border: 2px solid #3c3a54;
+  height: 130px;
+  background: #bcd095;
+  border: 2px solid #252528;
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
