@@ -14,6 +14,7 @@ body {
 }
 
 .topo {
+    background-image: url("../../Imagens/Texturas/purple_oak.png");
     display: flex;
     flex-direction: row;
     height: 22vh;
@@ -43,10 +44,11 @@ body {
 }
 
 .heart, .brain {
-    
+    opacity: 100%;
     width: 110px; height: 110px;
     object-fit: contain;
 }
+
 
 .character {  
   background: #22324a;
@@ -56,7 +58,7 @@ body {
 
 .profile {
     width: 20vw;
-    background-color: chartreuse;
+    background-image: url("../../Imagens/Texturas/dark_wood.png");
     display: flex;
     flex-direction: flex;
 }
@@ -78,7 +80,7 @@ height: 20vh;
 
 .text_history {
   flex: 1;  
-  background: #227ae6;
+  background: #ffffff;
 }
 
 .text_box {
@@ -95,6 +97,11 @@ height: 20vh;
   font-size: 16px;
 }
 
+.health_icon, .sanity_icon{
+  opacity: 100%;
+  border-radius: 25px;
+}
+
 .inferior {
     height: 78vh;
     display: flex;
@@ -109,7 +116,7 @@ height: 20vh;
 }
 
 .inventory {
-  background-image: url("../../Imagens/Texturas/backpack_texture.jpg");
+  background-image: url("../../Imagens/Texturas/leather.png");
   height: 20vh;
   display: flex;
   align-items: center;
