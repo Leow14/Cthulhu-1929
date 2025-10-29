@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {  
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topo {
+    display: flex;
+    flex-direction: row;
+    height: 22vh;
+}
+
+.bars {
+    width: 80vw;
+    display: flex
+}
+
+.health_bar, .sanity_bar {
+    width: 40vw;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.heart, .brain {
+    padding-top: 30px;
+    width: 150px; height: 150px;
+    object-fit: contain;
+}
+
+.character {  
+  background: #22324a;
+  flex: 1;
+  border-top: 2px solid #2d2b39;
+}
+
+.photo {
+    width: 20vw;
+    background-color: chartreuse;
+}
+
+.text_history {
+  flex: 1;  
+  background: #1e2630;
+}
+
+.inferior {
+    height: 78vh;
+    background-color: tomato;
+    display: flex;
+}
+
+.left {  
+  background-color: aqua;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;  
+}
+
+.inventory {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  background: #531f05;
+  border-bottom: 2px solid #2d2b39;
+}
+
+.inv-nav {
+  background: #2a2740;
+  color: #eee;
+  border: 1px solid #3a3658;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background .15s ease, opacity .15s ease;
+}  
+.inv-nav:hover { background: #3a3658; }
+.inv-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.inv-viewport {  
+  flex: 1;
+  overflow: hidden;
+}
+
+.inv-track {  
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+  transition: transform .3s ease;
+}
+
+.inv-item {  
+  flex: 0 0 calc((100% - 24px) / 3);
+  /* Explicação: 3 itens por linha e gap total = 2 * 12px = 24px */  
+  height: 150px;
+  background: #a1e41d;
+  border: 2px solid #3c3a54;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  user-select: none;
+}
+
+.inv-item img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 6px;
+}
+
