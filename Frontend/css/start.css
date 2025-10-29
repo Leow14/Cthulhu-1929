@@ -27,13 +27,13 @@ body {
 .health_bar, .sanity_bar {
     width: 40vw;
     display: flex;
-    gap: 6px;
+    gap: 10px;
     align-items: center;
 }
 
 .heart, .brain {
-    padding-top: 30px;
-    width: 150px; height: 150px;
+    
+    width: 110px; height: 110px;
     object-fit: contain;
 }
 
@@ -50,7 +50,21 @@ body {
 
 .text_history {
   flex: 1;  
-  background: #1e2630;
+  background: #227ae6;
+}
+
+.text_box {
+  margin: 25px 25px 25px 25px;
+  border: 2px solid rgb(16, 15, 15);
+  width: 55vw;
+  height: 70vh;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.main_text{
+  margin: 15px 15px 15px 15px;
+  font-size: 16px;
 }
 
 .inferior {
