@@ -55,12 +55,11 @@ body {
 
 .inferior {
     height: 78vh;
-    background-color: tomato;
     display: flex;
 }
 
 .left {  
-  background-color: aqua;
+
   width: 40vw;
   display: flex;
   flex-direction: column;
@@ -68,18 +67,21 @@ body {
 }
 
 .inventory {
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 12px;
-  box-sizing: border-box;
-  background: #531f05;
-  border-bottom: 2px solid #2d2b39;
+    background-image: url("../../Imagens/Texturas/backpack_texture.jpg");
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border: 1px solid #090336;
+    
+    
+    border-bottom: 2px solid #2d2b39;
 }
 
 .inv-nav {
-  background: #2a2740;
+  background: #011421;
   color: #eee;
   border: 1px solid #3a3658;
   width: 36px;
@@ -126,6 +128,8 @@ body {
   font-size: 14px;
   text-align: center;
   user-select: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .inv-item img {
