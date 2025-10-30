@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url("../../Imagens/Cenários/download.jpg");
 }
 
 .topo {
@@ -51,7 +52,7 @@ body {
 
 
 .character {  
-  background: #22324a;
+
   flex: 1;
   border-top: 2px solid #2d2b39;
 }
@@ -64,11 +65,13 @@ body {
 }
 
 .photo {
-  margin-top: 1vh;
   margin-left: 1vh;
-width: 120px;
-height: 20vh;
+  width: 120px;
+  height: 20vh;
+  
+  border-radius: 20px;
 }
+
 
 .view_button {
   margin-top: 10vh;
@@ -80,16 +83,25 @@ height: 20vh;
 
 .text_history {
   flex: 1;  
-  background: #ffffff;
+  background: #ffffff
+  opacity: 100%;
+
 }
 
 .text_box {
   margin: 25px 25px 25px 25px;
   border: 2px solid rgb(16, 15, 15);
   width: 55vw;
+  background-color: white;
+  font-size: 300px;
   height: 70vh;
+  opacity: 70%;
   border-radius: 10px;
   box-sizing: border-box;
+}
+
+.main_text {
+  opacity: 100%;
 }
 
 .main_text{
