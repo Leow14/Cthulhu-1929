@@ -12,10 +12,16 @@ body {
     display: flex;
     flex-direction: column;
     background-image: url("../../Imagens/Cenários/download.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .topo {
     background-image: url("../../Imagens/Texturas/purple_oak.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     display: flex;
     flex-direction: row;
     height: 22vh;
@@ -60,6 +66,9 @@ body {
 .profile {
     width: 20vw;
     background-image: url("../../Imagens/Texturas/dark_wood.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     display: flex;
     flex-direction: flex;
 }
@@ -81,7 +90,7 @@ body {
   font-size: 17px;
   padding: 1em 2.7em;
   font-weight: 500;
-  background: #370338;
+  background: #37064c;
   color: white;
   border: none;
   position: relative;
@@ -115,7 +124,7 @@ body {
 .transition {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 500ms;
-  background-color: rgba(16, 185, 129, 0.6);
+  background-color: #591675;
   border-radius: 9999px;
   width: 0;
   height: 0;
@@ -139,8 +148,6 @@ body {
 /***           *****/
 .text_history {
   flex: 1;  
-  background: #ffffff
-  opacity: 100%;
 
 }
 
@@ -148,26 +155,30 @@ body {
   margin: 25px 25px 25px 25px;
   border: 2px solid rgb(16, 15, 15);
   width: 55vw;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.903);
   font-size: 300px;
   height: 70vh;
-  opacity: 70%;
+  opacity: 80%;
   border-radius: 10px;
   box-sizing: border-box;
+
+
 }
 
 .main_text {
   opacity: 100%;
+
 }
 
 .main_text{
   margin: 15px 15px 15px 15px;
-  font-size: 16px;
+  font-size: 25px;
+  opacity: 100%;
 }
 
 .health_icon, .sanity_icon{
   opacity: 100%;
-  border-radius: 25px;
+  border-radius: 45px;
 }
 
 .inferior {
@@ -176,31 +187,32 @@ body {
 }
 
 .left {  
-
   width: 40vw;
-  display: flex;
   flex-direction: column;
   gap: 12px;  
 }
 
 .inventory {
   background-image: url("../../Imagens/Texturas/leather.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   height: 20vh;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
   box-sizing: border-box;
-  border: 1px solid #090336;
+  border: 3px solid #000000;
     
     
-  border-bottom: 2px solid #2d2b39;
+
 }
 
 .inv-nav {
-  background: #011421;
-  color: #eee;
-  border: 1px solid #3a3658;
+  background: #f5ededa9;
+  color: #1c1b1b;
+  border: 1px solid #000000;
   width: 36px;
   height: 36px;
   border-radius: 8px;
@@ -211,7 +223,7 @@ body {
   place-items: center;
   transition: background .15s ease, opacity .15s ease;
 }  
-.inv-nav:hover { background: #3a3658; }
+.inv-nav:hover { background: #f5ededd9; }
 .inv-nav:disabled {
   opacity: 0.35;
   cursor: not-allowed;
@@ -233,9 +245,9 @@ body {
   flex: 0 0 calc((100% - 24px) / 3);
   /* Explicação: 3 itens por linha e gap total = 2 * 12px = 24px */  
   height: 130px;
-  background: #bcd095;
-  border: 2px solid #252528;
-  border-radius: 10px;
+  background: #abd06175;
+  border: 2px solid #161716;
+  border-radius: 30px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
