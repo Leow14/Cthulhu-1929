@@ -71,6 +71,9 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 .photo {
@@ -86,62 +89,132 @@ body {
 
 /***** Botão do olho *****/
 
+/* Botão “eye” com vibe horror/terror */
 .view_button {
-  font-size: 17px;
-  padding: 1em 2.7em;
-  font-weight: 500;
-  background: #37064c;
-  color: white;
-  border: none;
+  --bg1: #0d0a10;
+  --bg2: #1a141f;
+  --edge: #3cb51a;       /* borda avermelhada escura */
+  --glow: #12da1c;       /* vermelho sangue */
+  --glow-soft: #35800c;
+  --noise: rgba(255,255,255,0.02);
+
   position: relative;
-  overflow: hidden;
-  border-radius: 0.6em;
+  display: inline-grid;
+  place-items: center;
+  width: 56px;   /* ajuste como preferir */  
+  height: 56px;  /* mesmo valor da largura */
+  padding: 0.6em 0.6em;
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(180deg, var(--bg2) 0%, var(--bg1) 100%),
+    radial-gradient(120% 120% at 50% 0%, var(--noise) 0%, transparent 60%);
+
+  color: #eee;
   cursor: pointer;
+  outline: none;
+
+  /* Tipografia limpa para UI */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+
+  /* Forma angular (placa/carapça) */
+  clip-path: polygon(8% 0, 92% 0, 100% 20%, 100% 80%, 92% 100%, 8% 100%, 0 80%, 0 20%);
+
+  /* Profundidade */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    inset 0 -2px 6px rgba(0,0,0,0.6),
+    0 0 0 0 rgba(185,14,26,0);
+
+  transition: box-shadow .25s ease, transform .12s ease, border-color .2s ease, filter .2s ease;
 }
 
-.gradient {
+/* Brilho sutil + borda reativa no hover */
+.view_button:hover {
+  border-color: var(--glow-soft);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    inset 0 -3px 8px rgba(0,0,0,0.7),
+    0 0 12px 2px rgba(3, 88, 7, 0.25),
+    0 0 24px 6px rgba(5, 86, 17, 0.12);
+  filter: saturate(1.05);
+}
+
+/* Clique: leve compressão */
+.view_button:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow:
+    inset 0 2px 10px rgba(0,0,0,0.85),
+    0 0 8px 1px rgba(6, 76, 3, 0.18);
+}
+
+/* Luz diagonal suave para “metal” */
+.view_button::after {
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  border-radius: 0.6em;
-  margin-top: -0.25em;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.3)
-  );
+  inset: 0;
+  border-radius: 10px;
+  clip-path: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(0,0,0,0) 40%);
+  pointer-events: none;
 }
 
-.label {
+/* Mantém seu span.gradient como brilho de base, mais sutil aqui */
+.view_button .gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  clip-path: inherit;
+  background: radial-gradient(60% 70% at 50% 110%, rgba(22, 86, 4, 0.08), transparent 70%);
+  opacity: 1;
+}
+
+/* Ícone de olho */
+.view_button .label {
   position: relative;
-  top: -1px;
-  height: 50px;
-  width: 50px;
+  width: 34px;
+  height: 34px;
+  z-index: 1;
+  filter: drop-shadow(0 0 4px rgba(4, 82, 20, 0.15));
+  transition: transform .2s ease, filter .2s ease;
 }
 
-.transition {
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  transition-duration: 500ms;
-  background-color: #591675;
-  border-radius: 9999px;
-  width: 0;
-  height: 0;
+/* Leve “pulso” no ícone ao hover */
+.view_button:hover .label {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 6px rgba(11, 85, 6, 0.28));
+}
+
+/* Ripple central (reaproveitando seu .transition) */
+.view_button .transition {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 0;
+  height: 0;
   transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(32, 89, 6, 0.18), rgba(185,14,26,0) 60%);
+  transition: width .45s cubic-bezier(0.2, 0, 0.2, 1), height .45s cubic-bezier(0.2, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .view_button:hover .transition {
-  width: 14em;
-  height: 14em;
+  width: 12em;
+  height: 12em;
 }
 
-.view_  button:active {
-  transform: scale(0.97);
+/* Estado “desativado” opcional */
+.view_button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.4) brightness(0.85);
+  border-color: #201a22;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.7);
 }
+
 
 
 
@@ -155,14 +228,11 @@ body {
   margin: 25px 25px 25px 25px;
   border: 2px solid rgb(16, 15, 15);
   width: 55vw;
-  background-color: rgba(255, 255, 255, 0.903);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 300px;
   height: 70vh;
-  opacity: 80%;
   border-radius: 10px;
   box-sizing: border-box;
-
-
 }
 
 .main_text {
