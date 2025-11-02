@@ -18,7 +18,7 @@ body {
 }
 
 .topo {
-    background-image: url("../../Imagens/Texturas/purple_oak.png");
+    background-image: url("../../Imagens/Texturas/dark_wood.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -65,7 +65,7 @@ body {
 
 .profile {
     width: 20vw;
-    background-image: url("../../Imagens/Texturas/dark_wood.png");
+    background-image: url("../../Imagens/Texturas/green_oak.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
