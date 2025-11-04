@@ -32,3 +32,13 @@ background-image: url("../../Imagens/Cenários/main_screen.png");
     gap: 300px;
     
 }
+
+.achievments {
+    height: 60px;
+    width: 60px;
+    margin-left: 95%;
+    background-image: url("../../Imagens/Icons/achievments.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
